@@ -17,7 +17,7 @@ On ethereum, if you want to call a contract or make a transaction, this is not f
 
 The gas fee is what you have to pay in ethers for this call, The following formula describes how to calculate this gas fee:
 ```math
-gas fee = gas units * gas price per unit}
+gas fee = gas units * gas price per unit
 ```
 
 Optimization in smart contracts is very important, because today the gas fees in ethereum are very high, and you need to optimize as much as possible to pay less fees for calls in a smart contract.
