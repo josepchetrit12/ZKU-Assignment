@@ -15,9 +15,9 @@ The smart contract does not execute itself, we always need an EOA account to pay
 
 On ethereum, if you want to call a contract or make a transaction, this is not free, it requires computational resources to execute, the gas is the amount of computational effort required to execute this call in EVM.
 
-The gas rate is what you have to pay in ethers for this call &rarr; $gasRate = {gasUnits * gasPricePerUnit}$.
+The gas fee is what you have to pay in ethers for this call, The following formula describes how to calculate this gas fee:
 ```math
-{Gas rate = gas units * gas price per unit}
+gas fee = gas units * gas price per unit}
 ```
 
 Optimization in smart contracts is very important, because today the gas fees in ethereum are very high, and you need to optimize as much as possible to pay less fees for calls in a smart contract.
