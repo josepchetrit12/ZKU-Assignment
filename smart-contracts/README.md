@@ -9,6 +9,8 @@ Main Steps:
 
 ## Is the new design better than having separate confirmReceived and refundSeller? Why or why not?
 
-In terms of gas optimization, yes, because we only have one call to make. But there is a small security problem, if the buyer is a contract, and this contract is programmed in a malicious way, it could have programmed a revert in the transfer call, this would block the ethers of the buyer but also of the seller. By doing it separately you avoid this type of attack, but in terms of gas it is more expensive.
+In terms of gas optimization, yes, because we only have one call to make. But there is a small security problem, if the buyer is a contract, and this contract is programmed in a malicious way, it could have programmed a revert in the transfer call, this would block the ethers of the buyer but also of the seller. By doing it separately you avoid this type of attack, but in terms of gas it is more expensive. Another problem would be if the buyer never recive the product, after 3 minutes the seller can call the function and take the ethers.
+
+Another problem would be that the seller does not send the product, and after 5 minutes the seller himself can call the function and take the ethers, that would make the buyer recover the blocked ethers but be without product.
 
 
